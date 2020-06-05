@@ -1,0 +1,14 @@
+myFunction(); 
+
+function myFunction() {
+  
+  var val = 0;
+  var i = 1000;
+	for (i; i > 17; i--) {
+  		val += i;
+        i -= 11;
+	}
+
+		console.log(val)
+
+}
