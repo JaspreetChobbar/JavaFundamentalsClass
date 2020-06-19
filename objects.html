@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Creating a JavaScript Object.</p>
+
+<p id="demo"></p>
+
+<script>
+    //objects
+var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+
+// properties
+document.getElementById("demo").innerHTML =
+person.firstName + " is " + person["age"] + " years old.";
+
+// add a new property
+person.nationality = "English";
+
+// delete
+delete person.age;
+
+
+// access using function
+person.name = function() {
+  return this.firstName + " " + this.lastName;
+};
+
+document.getElementById("demo").innerHTML =
+"My father is " + person.name();
+
+</script>
+
+</body>
+</html>

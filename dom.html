@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Development Framework</title>
+</head>
+
+<body>
+
+    <p id="demo">DEMO</p>
+    <p id="demo1">DEMO1</p>
+    <!-- <img id="image" src="smiley.gif"> -->
+    <h1 class="democlass">Hello World</h1>
+
+    <div id="myDIV">This div element has an onmousemove event handler that displays a random number every time you move
+        your mouse inside this orange field.
+        <p>Click the button to remove the DIV's event handler.</p>
+        <button onclick="removeHandler()" id="myBtn">Try it</button>
+    </div>
+
+    <ul id="myList">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Milk</li>
+    </ul>
+    <p>Click the button to replace the first item in the the list.</p>
+    <button onclick="myFunction1()">Try it</button>
+
+    <script>
+        //change
+        document.getElementById("demo").innerHTML = "Hello";
+
+        //document.getElementById("image").src = "pic_mountain.jpg";
+
+        // add
+        let pElem = document.createElement('p');
+        pElem.textContent = 'This is a newly-added paragraph.' + myDate;
+        document.body.appendChild(pElem);
+
+        // remove
+
+        var myobj = document.getElementById("demo1");
+        myobj.remove();
+
+        // remove attribute
+        //document.getElementsByTagName("H1")[0].removeAttribute("class");
+
+        // add event
+        document.getElementById("myDIV").addEventListener("mousemove", myFunction);
+
+        function myFunction() {
+            document.getElementById("demo").innerHTML = Math.random();
+        }
+
+        // remove event
+        function removeHandler() {
+            document.getElementById("myDIV").removeEventListener("mousemove", myFunction);
+        }
+
+        // replace node
+
+        function myFunction1() {
+            var textnode = document.createTextNode("Water");
+            var item = document.getElementById("myList").childNodes[0];
+            item.replaceChild(textnode, item.childNodes[0]);
+        }
+    </script>
+
+</body>
+
+</html>
